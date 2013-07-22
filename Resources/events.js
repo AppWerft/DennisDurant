@@ -39,7 +39,7 @@ exports.create = function() {
 	self.addEventListener('open', function(e) {
 		if (Ti.App.FB.getKoggedIn())
 			getEventList();
-	});
+	});   
 	if (!Ti.App.FB.getLoggedIn()) {
 		Ti.App.FB.authorize();
 	}
