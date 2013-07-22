@@ -28,8 +28,11 @@ exports.create = function() {
 	});
 	self.add(tv);
 	Ti.App.FB = require('facebook');
-	Ti.App.FB.appid = Ti.App.Properties.getString('fb_appid');
+	Ti.App.FB.appid = Ti.App.Properties.getString('ti.facebook.appid');
 	Ti.App.FB.permissions = ['friends_events'];
+	if (!Ti.App.FB.getLoggedIn()) {
+		Ti.App.FB.authorize();
+	}
 	Ti.App.FB.forceDialogAuth = false;
 	Ti.App.FB.addEventListener('login', function(e) {
 		if (e.success)
@@ -38,9 +41,7 @@ exports.create = function() {
 	self.addEventListener('open', function(e) {
 		if (Ti.App.FB.getLoggedIn())
 			getEventList();
-	});   
-	if (!Ti.App.FB.getLoggedIn()) {
-		Ti.App.FB.authorize();
-	}
+	});
+
 	self.open();
 }

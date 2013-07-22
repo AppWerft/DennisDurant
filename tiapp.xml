@@ -17,8 +17,8 @@
     <analytics>false</analytics>
     <guid>bb8245ae-c9ee-4d53-94c9-d184cf811acf</guid>
     <property name="ti.ui.defaultunit" type="string">system</property>
-    <property name="fb_appid" type="string">430216330426968</property>
-    <property name="fb_secret" type="string">34d03b364e83ca68dc0f0733fd2f0fe9</property>
+    <property name="ti.facebook.appid" type="string">430216330426968</property>
+    <property name="ti.facebook.appsecret" type="string">34d03b364e83ca68dc0f0733fd2f0fe9</property>
     <iphone>
         <orientations device="iphone">
             <orientation>Ti.UI.PORTRAIT</orientation>
@@ -62,5 +62,5 @@
         <target device="mobileweb">false</target>
         <target device="tizen">false</target>
     </deployment-targets>
-    <sdk-version>3.2.0</sdk-version>
+    <sdk-version>3.1.1.GA</sdk-version>
 </ti:app>

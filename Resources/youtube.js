@@ -63,7 +63,7 @@ exports.create = function() {
 			backgroundColor : '#000'
 		});
 		self.add(videoPlayer)
-
+		tv.setBottom(200);
 		get_yt_clip(_e.rowData.yt, function(_err, _url) {
 			//	console.log(JSON.parse(_res));
 			videoPlayer.url = _url;
