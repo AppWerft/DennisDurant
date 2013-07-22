@@ -31,16 +31,18 @@ exports.create = function() {
 	Ti.App.FB.appid = Ti.App.Properties.getString('fb_appid');
 	Ti.App.FB.permissions = ['friends_events'];
 	Ti.App.FB.forceDialogAuth = false;
-	if (!Ti.App.FB.loggedIn)
-		Ti.App.FB.authorize();
+	Ti.App.FB.logout();
 	Ti.App.FB.addEventListener('login', function(e) {
+		console.log(e);
 		if (e.success)
 			getEventList();
 	});
 	self.addEventListener('open', function(e) {
-		if (Ti.App.FB.loggedIn)
+		if (Ti.App.FB.getKoggedIn())
 			getEventList();
 	});
-
+	if (!Ti.App.FB.getLoggedIn()) {
+		Ti.App.FB.authorize();
+	}
 	self.open();
 }
