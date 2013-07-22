@@ -31,7 +31,6 @@ exports.create = function() {
 	Ti.App.FB.appid = Ti.App.Properties.getString('fb_appid');
 	Ti.App.FB.permissions = ['friends_events'];
 	Ti.App.FB.forceDialogAuth = false;
-	Ti.App.FB.logout();
 	Ti.App.FB.addEventListener('login', function(e) {
 		console.log(e);
 		if (e.success)
