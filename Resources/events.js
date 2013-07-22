@@ -32,12 +32,11 @@ exports.create = function() {
 	Ti.App.FB.permissions = ['friends_events'];
 	Ti.App.FB.forceDialogAuth = false;
 	Ti.App.FB.addEventListener('login', function(e) {
-		console.log(e);
 		if (e.success)
 			getEventList();
 	});
 	self.addEventListener('open', function(e) {
-		if (Ti.App.FB.getKoggedIn())
+		if (Ti.App.FB.getLoggedIn())
 			getEventList();
 	});   
 	if (!Ti.App.FB.getLoggedIn()) {
