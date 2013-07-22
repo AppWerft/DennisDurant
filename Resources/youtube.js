@@ -1,7 +1,7 @@
 exports.create = function() {
 	//  http://gdata.youtube.com/feeds/api/users/DWEDA10/uploads?v=2&alt=json
 	var self = require('win').create();
-	var id = 'PLB453A0AC718531CB';
+	var id = 'PLB453A0AC718531CB';var videoPlayer;
 	var gigs = {
 		"w5hD15gRNR4" : "Dennis Durant - Just in time",
 		"XFfoMuYZ5rw" : "Dennis Durant - Just in time - CD Release Konzert",
@@ -53,7 +53,7 @@ exports.create = function() {
 	self.add(tv);
 	tv.addEventListener('click', function(_e) {
 		var get_yt_clip = require('vendor/get_yt_clip');
-		var videoPlayer = Titanium.Media.createVideoPlayer({
+		videoPlayer = Titanium.Media.createVideoPlayer({
 			autoplay : false,
 			mediaControlStyle : Titanium.Media.VIDEO_CONTROL_DEFAULT,
 			scalingMode : Titanium.Media.VIDEO_SCALING_ASPECT_FIT,
@@ -71,8 +71,8 @@ exports.create = function() {
 		});
 	});
 	self.addEventListener('close', function() {
-		if (videoplayer && videoplayer.playing)
-			videoplayer.stop()
+		if (videoPlayer && videoPlayer.playing)
+			videoPlayer.stop()
 	});
 	self.open();
 }

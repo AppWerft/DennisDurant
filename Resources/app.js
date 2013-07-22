@@ -42,8 +42,9 @@ self.carousel.addEventListener('select', function(_e) {
 			break;
 		case 'itunes':
 			require('itunes').create();
-			break;case 'facebook':
-			require('facebook').create();
+			break;
+		case 'fb':
+			require('fb').create();
 			break;
 	}
 })
